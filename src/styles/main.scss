@@ -3,3 +3,44 @@
 body {
   background-color: teal;
 }
+
+#chatNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 300px;
+  background-image: url("../../images/theWall.jpg");
+  background-position: center;
+  background-size: cover;
+  position: static;
+  top: 0;
+  width: 100%;
+  #commentForm {
+    display: flex;
+    margin: 15px;
+    color: white;
+    .form-group {
+      margin: 20px;
+    }
+    #userComment {
+      width: 350px;
+    }
+  }
+  .navbar-brand {
+    color: white;
+  }
+}
+
+#menuBar {
+  display: flex;
+  width: 100%;
+  // margin-top: 310px;
+  background-color: lightgrey;
+  padding: 15px;
+  justify-content: space-around;
+}
+
+#commentForm {
+  display: flex;
+  flex-direction: row;
+}
