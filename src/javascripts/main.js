@@ -1,14 +1,14 @@
-import navbar from '../navbar';
-import menubar from '../menubar';
 import themesModal from './components/themes-modal/themes-modal';
+import addCommentEvents from './components/addComments';
+
+
 import 'bootstrap';
 import '../styles/main.scss';
 
 const init = () => {
-  navbar.buildNavBar();
-  menubar.buildMenuBar();
   themesModal.modalDomStringBuilder();
   themesModal.testClassList();
+  addCommentEvents.addCommentEvents();
 };
 
 init();
