@@ -1,22 +1,9 @@
 import util from '../helpers/util';
-import attachEventListener from '../helpers/attachEventListener';
 
 
-const commentAvatar = '';
+const commentAvatar = 'https://via.placeholder.com/150';
 let commentNum = 1;
 const commentCollection = [];
-
-const deleteComment = (e) => {
-  const buttonId = e.target.id;
-  commentCollection.forEach((comment, index) => {
-    if (comment.id === buttonId) {
-      commentCollection.splice(index, 1);
-    }
-  });
-
-  // messageBuilder(commentCollection);
-  attachEventListener.addDeleteEvents(deleteComment);
-};
 
 const messageBuilder = (commentArray) => {
   let domString = '';
@@ -31,11 +18,10 @@ const messageBuilder = (commentArray) => {
     domString += '</div>';
   });
   util.printToDom('container', domString);
-  attachEventListener.addDeleteEvents(deleteComment);
 };
 
-const addComment = (e) => {
-  e.preventDefault();
+
+const addComment = () => {
   const inputName = document.getElementById('userName');
   const inputComment = document.getElementById('userComment');
   const commentName = inputName.value;
@@ -53,4 +39,22 @@ const addComment = (e) => {
   inputComment.value = '';
 };
 
-export default { addComment };
+
+const addCommentEvents = () => {
+  const addCommentBtn = document.getElementById('addCommentBtn');
+  const userComment = document.getElementById('userComment');
+  const userName = document.getElementById('userName');
+  addCommentBtn.addEventListener('click', addComment);
+  userComment.addEventListener('keydown', (e) => {
+    if (e.keyCode === 13) {
+      addComment();
+    }
+  });
+  userName.addEventListener('keydown', (e) => {
+    if (e.keyCode === 13) {
+      addComment();
+    }
+  });
+};
+
+export default { addCommentEvents };
