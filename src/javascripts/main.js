@@ -7,7 +7,7 @@ import '../styles/main.scss';
 
 const init = () => {
   themesModal.modalDomStringBuilder();
-  themesModal.testClassList();
+  // themesModal.testClassList();
   addCommentEvents.addCommentEvents();
 };
 
