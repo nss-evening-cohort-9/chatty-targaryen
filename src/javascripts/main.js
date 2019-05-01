@@ -1,10 +1,8 @@
-import navbar from '../navbar';
-import menubar from '../menubar';
+import navbar from './components/navbar';
 import '../styles/main.scss';
 
 const init = () => {
   navbar.buildNavBar();
-  menubar.buildMenuBar();
 };
 
 init();
