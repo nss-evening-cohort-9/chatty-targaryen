@@ -9,6 +9,23 @@
     <div id="modalDiv"></div>
     <div id="navBar"></div>
     <div id="menuBar"></div>
-    <script src="javascripts/main.js"></script>
+
+
+    <nav id="chatNav" class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand">Navbar</a>
+      <div class="form-inline">
+        <input class="form-control mr-sm-2" id="userName" type="text" placeholder="Name" aria-label="Name">
+        <input class="form-control mr-sm-2" id="userComment" type="text" placeholder="Comment" aria-label="Comment">
+        <button id="addCommentBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
+      </div>
+      <button class="btn btn-outline-danger" id="clearBtn">Clear comments</button>
+      <button id="clearBtn" class="btn btn-danger">Clear Messages</button>
+      <button type="button" class="btn btn-primary modal-button" id="changeThemesButton" data-toggle="modal" data-target="#changeThemesModal">Change Themes</button>
+    </nav>
+
+
+
+    <div id="container"></div>
+
   </body>
 </html>
