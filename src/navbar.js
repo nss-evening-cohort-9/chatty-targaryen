@@ -14,7 +14,7 @@ const buildNavBar = () => {
   domString += '<input type="text" class="form-control" id="userComment" placeholder="Comment">';
   domString += '</div>';
   domString += '</form>';
-  domString += '<button class="btn btn-primary">Submit</button>';
+  domString += '<button id="addCommentBtn" class="btn btn-primary">Submit</button>';
   domString += '</nav>';
   util.printToDom('navBar', domString);
 };
