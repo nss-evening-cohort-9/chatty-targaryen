@@ -113,6 +113,16 @@ const modalDomStringBuilder = () => {
   util.printToDom('modalDiv', domString);
 };
 
+const testClassList = () => {
+  const testList = Array.from(document.getElementById('modalDiv').classList);
+  testList.forEach((classItem) => {
+    if (classItem.includes('color-class')) {
+      util.printToDom('testModalDiv', classItem);
+    }
+  });
+};
+
 export default {
   modalDomStringBuilder,
+  testClassList,
 };

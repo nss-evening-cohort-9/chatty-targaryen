@@ -8,6 +8,7 @@ const init = () => {
   navbar.buildNavBar();
   menubar.buildMenuBar();
   themesModal.modalDomStringBuilder();
+  themesModal.testClassList();
 };
 
 init();
