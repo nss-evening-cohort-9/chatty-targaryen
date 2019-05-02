@@ -1,4 +1,5 @@
 import themesModal from './components/themes-modal/themes-modal';
+
 import addCommentEvents from './components/addComments';
 
 
@@ -7,7 +8,8 @@ import '../styles/main.scss';
 
 const init = () => {
   addCommentEvents.getData();
-  themesModal.modalDomStringBuilder();
+  themesModal.initializeThemesModal();
+  // themesModal.testClassList();
   addCommentEvents.addCommentEvents();
 };
 
