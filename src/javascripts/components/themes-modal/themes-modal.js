@@ -1,5 +1,7 @@
 import util from '../../helpers/util';
 
+let radioButtons = [];
+let checkedRadioButton;
 const modalDomStringBuilder = () => {
   let domString = '';
 
@@ -111,8 +113,55 @@ const modalDomStringBuilder = () => {
   domString += '</div>';
 
   util.printToDom('modalDiv', domString);
+  radioButtons = Array.from(document.getElementsByClassName('themes-modal-radio'));
 };
 
+const checkLargeText = () => {
+  const lgTextCheckbox = document.getElementById('largeText');
+  if (lgTextCheckbox.checked) {
+    util.printToDom('testModalDiv', lgTextCheckbox.id);
+  }
+};
+
+const cancelButtonClick = () => {
+  radioButtons.forEach((radioButton) => {
+    if (radioButton.checked) {
+      console.error(radioButton.id);
+      checkedRadioButton = radioButton;
+    }
+  });
+  checkedRadioButton.checked = false;
+};
+
+const saveButtonClick = () => {
+  radioButtons.forEach((radioButton) => {
+    if (radioButton.checked) {
+      util.printToDom('testModalDiv', radioButton.id);
+    }
+  });
+  checkLargeText();
+};
+
+const modalControlsListeners = () => {
+  document.getElementById('saveButton').addEventListener('click', saveButtonClick);
+  document.getElementById('cancelButton').addEventListener('click', cancelButtonClick);
+};
+
+const initializeThemesModal = () => {
+  modalDomStringBuilder();
+  modalControlsListeners();
+};
+
+
+// const testClassList = () => {
+//   const testList = Array.from(document.getElementById('modalDiv').classList);
+//   testList.forEach((classItem) => {
+//     if (classItem.includes('color-class')) {
+//       util.printToDom('testModalDiv', classItem);
+//     }
+//   });
+// };
+
 export default {
-  modalDomStringBuilder,
+  initializeThemesModal,
 };
