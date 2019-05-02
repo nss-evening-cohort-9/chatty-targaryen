@@ -1,9 +1,12 @@
 import util from '../helpers/util';
 
+import seedData from './seedData';
+
 
 const commentAvatar = 'https://via.placeholder.com/150';
 let commentNum = 1;
 const commentCollection = [];
+let seedDataArray = [];
 
 const messageBuilder = (commentArray) => {
   let domString = '';
@@ -20,6 +23,20 @@ const messageBuilder = (commentArray) => {
   util.printToDom('container', domString);
 };
 
+const buildDefaultComments = () => {
+  let domString = '';
+  seedDataArray.forEach((seedComment) => {
+    domString += '<div class="media-comment seedDataComment">';
+    domString += `<img class="mr-3 align-self-center" src="${seedComment.imageURL}" alt="Generic placeholder image">`;
+    domString += '<div class="media-body">';
+    domString += `<h5 class="mt-0">${seedComment.username}</h5>`;
+    domString += `<p class="commentText">${seedComment.comment}</p>`;
+    domString += '</div>';
+    domString += `<button id="${seedComment.id}" class="btn btn-danger deleteButton">Delete</button>`;
+    domString += '</div>';
+  });
+  util.printToDom('container', domString);
+};
 
 const addComment = () => {
   const inputName = document.getElementById('userName');
@@ -57,4 +74,16 @@ const addCommentEvents = () => {
   });
 };
 
-export default { addCommentEvents };
+const getData = () => {
+  seedData.getSeedData()
+    .then((response) => {
+      const seedArray = response.data.seedDataArray;
+      seedDataArray = seedArray;
+      buildDefaultComments();
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
+export default { addCommentEvents, getData };

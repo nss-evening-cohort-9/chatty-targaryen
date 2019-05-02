@@ -6,6 +6,7 @@ import 'bootstrap';
 import '../styles/main.scss';
 
 const init = () => {
+  addCommentEvents.getData();
   themesModal.modalDomStringBuilder();
   addCommentEvents.addCommentEvents();
 };
