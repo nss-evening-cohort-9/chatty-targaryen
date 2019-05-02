@@ -1,7 +1,7 @@
 import util from '../../helpers/util';
 
-const radioButtons = [];
-
+let radioButtons = [];
+let checkedRadioButton;
 const modalDomStringBuilder = () => {
   let domString = '';
 
@@ -113,34 +113,43 @@ const modalDomStringBuilder = () => {
   domString += '</div>';
 
   util.printToDom('modalDiv', domString);
-  radioButtons = Array.from(document.getElementsByClassName('modal-radio'));
+  radioButtons = Array.from(document.getElementsByClassName('themes-modal-radio'));
 };
 
 const checkLargeText = () => {
-lgTextCheckbox = document.getElementById('largeText');
-if (lgTextCheckbox.checked) {
-util.printToDom('testModalDiv', lgTextCheckbox.id);
-}
+  const lgTextCheckbox = document.getElementById('largeText');
+  if (lgTextCheckbox.checked) {
+    util.printToDom('testModalDiv', lgTextCheckbox.id);
+  }
+};
+
+const cancelButtonClick = () => {
+  radioButtons.forEach((radioButton) => {
+    if (radioButton.checked) {
+      console.error(radioButton.id);
+      checkedRadioButton = radioButton;
+    }
+  });
+  checkedRadioButton.checked = false;
 };
 
 const saveButtonClick = () => {
-radioButtons.forEach((radioButton) => {
-if (radioButton.checked) {
-util.printToDom('testModalButton', radioButton.id);
-}
-});
-checkLargeText();
+  radioButtons.forEach((radioButton) => {
+    if (radioButton.checked) {
+      util.printToDom('testModalDiv', radioButton.id);
+    }
+  });
+  checkLargeText();
 };
 
 const modalControlsListeners = () => {
-document.getElementById('saveButton').addEventListener('click', saveButtonClick);
-document.getElementById('cancelButton').addEventListener('click', cancelButtonClick);
-
+  document.getElementById('saveButton').addEventListener('click', saveButtonClick);
+  document.getElementById('cancelButton').addEventListener('click', cancelButtonClick);
 };
 
 const initializeThemesModal = () => {
-modalDomStringBuilder();
-modalControlsListeners();
+  modalDomStringBuilder();
+  modalControlsListeners();
 };
 
 
@@ -154,6 +163,5 @@ modalControlsListeners();
 // };
 
 export default {
-  modalDomStringBuilder,
-  // testClassList,
+  initializeThemesModal,
 };
