@@ -12,14 +12,14 @@ const messageBuilder = (commentArray) => {
     domString += `<img class="mr-3 align-self-center" src="${comment.avatar}" alt="Generic placeholder image">`;
     domString += '<div class="media-body">';
     domString += `<h5 class="mt-0">${comment.name}</h5>`;
-    domString += `<p class="commentText">${comment.comment}</p>`;
+    domString += `<p id="${comment.id}" contentEditable="false" class="commentText">${comment.comment}</p>`;
     domString += '</div>';
-    domString += `<button id="${comment.id}" class="btn btn-danger deleteButton">Delete</button>`;
+    domString += `<button id="delete${comment.id}" class="btn btn-danger deleteButton">Delete</button>`;
+    domString += `<button id="edit${comment.id}" class="btn btn-primary editBtn">Edit</button>`;
     domString += '</div>';
   });
   util.printToDom('container', domString);
 };
-
 
 const addComment = () => {
   const inputName = document.getElementById('userName');
