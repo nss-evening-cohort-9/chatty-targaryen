@@ -16,8 +16,14 @@
         <input class="form-control mr-sm-2" id="userComment" type="text" placeholder="Comment" aria-label="Comment">
         <button id="addCommentBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
       </div>
-      <button id="clearBtn" class="btn btn-danger">Clear Comments</button>
-      <button type="button" class="btn btn-primary modal-button" id="changeThemesButton" data-toggle="modal" data-target="#changeThemesModal">Change Themes</button>
+      <div id="mainMenuBtnContainer">
+        <button id="clearBtn" class="btn btn-danger">Clear Comments</button>
+        <button type="button" class="btn btn-primary modal-button" id="changeThemesButton" data-toggle="modal" data-target="#changeThemesModal">Change Themes</button>
+      </div>
+      <div id="commentUpdate">
+        <input type="text" class="form-control mr-md-4" id="newCommentEntry">
+        <button class="btn btn-primary" id="updateCommentBtn">Update Comment</button>
+      </div>
     </nav>
 
 
@@ -26,23 +32,5 @@
     <div id="modalContainer">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Edit!</button>
     </div>
-    <div id="sampleCommentsContainer">
-      <div id="comment1container">
-        <h2 id="comment1name">Comment 1 Name</h2>
-        <h2 id="comment1">Comment 1 Comment</h2>
-        <button id="comment1" data-toggle="modal" data-target="#exampleModalCenter">Edit</button>
-      </div>
-      <div id="comment2container">
-          <h2 id="comment2name">Comment 1 Name</h2>
-          <h2 id="comment2">Comment 1 Comment</h2>
-          <button id="comment2" data-toggle="modal" data-target="#exampleModalCenter">Edit</button>
-      </div>
-      <div id="comment3container">
-        <h2 id="comment3name">Comment 1 Name</h2>
-        <h2 id="comment3">Comment 1 Comment</h2>
-        <button id="comment3" data-toggle="modal" data-target="#exampleModalCenter">Edit</button>
-      </div>
-    </div>
-
   </body>
 </html>

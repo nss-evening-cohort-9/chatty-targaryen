@@ -31,16 +31,14 @@ body {
   }
 }
 
-#menuBar {
-  display: flex;
-  width: 100%;
-  // margin-top: 310px;
-  background-color: lightgrey;
-  padding: 15px;
-  justify-content: space-around;
-}
-
 #commentForm {
   display: flex;
   flex-direction: row;
+}
+
+#newCommentEntry {
+  display: none;
+}
+#updateCommentBtn {
+  display: none;
 }

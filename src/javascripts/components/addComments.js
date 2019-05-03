@@ -1,5 +1,5 @@
 import util from '../helpers/util';
-
+import editComment from './editComment/editComment';
 
 const commentAvatar = 'https://via.placeholder.com/150';
 let commentNum = 1;
@@ -14,11 +14,12 @@ const messageBuilder = (commentArray) => {
     domString += `<h5 class="mt-0">${comment.name}</h5>`;
     domString += `<p id="${comment.id}" contentEditable="false" class="commentText">${comment.comment}</p>`;
     domString += '</div>';
-    domString += `<button id="delete${comment.id}" class="btn btn-danger deleteButton">Delete</button>`;
-    domString += `<button id="edit${comment.id}" class="btn btn-primary editBtn">Edit</button>`;
+    domString += `<button id="${comment.id}" class="btn btn-danger deleteButton">Delete</button>`;
+    domString += `<button id="${comment.id}" class="btn btn-primary editBtn">Edit</button>`;
     domString += '</div>';
   });
   util.printToDom('container', domString);
+  editComment.addEditBtnListeners();
 };
 
 const addComment = () => {
@@ -57,4 +58,4 @@ const addCommentEvents = () => {
   });
 };
 
-export default { addCommentEvents };
+export default { addCommentEvents, addComment, messageBuilder };
