@@ -117,9 +117,14 @@ const modalDomStringBuilder = () => {
 };
 
 const checkLargeText = () => {
+  const appClassList = document.getElementById('app').classList;
   const lgTextCheckbox = document.getElementById('largeText');
   if (lgTextCheckbox.checked) {
-    util.printToDom('testModalDiv', lgTextCheckbox.id);
+    appClassList.remove('regular-text');
+    appClassList.add('large.text');
+  } else {
+    appClassList.remove('large-text');
+    appClassList.add('regular-text');
   }
 };
 
@@ -133,12 +138,46 @@ const cancelButtonClick = () => {
   checkedRadioButton.checked = false;
 };
 
-const saveButtonClick = () => {
-  radioButtons.forEach((radioButton) => {
-    if (radioButton.checked) {
-      util.printToDom('testModalDiv', radioButton.id);
+const changeDivClasses = (classToSub) => {
+  const designatedClassList = document.getElementById('container').classList;
+  const ClassListArray = Array.from(designatedClassList);
+  ClassListArray.forEach((className) => {
+    if (className.includes('color-class')) {
+      designatedClassList.remove(className);
+      designatedClassList.add(classToSub);
+      util.printToDom('testModalDiv', classToSub);
     }
   });
+};
+
+const saveButtonClick = () => {
+  let selectedClass = '';
+
+  radioButtons.forEach((radioButton) => {
+    if (radioButton.checked) {
+      switch (radioButton.id) {
+        case 'fireRadio':
+          selectedClass = 'fire-color-class';
+          break;
+
+        case 'iceRadio':
+          selectedClass = 'ice-color-class';
+          break;
+
+        case 'stoneRadio':
+          selectedClass = 'stone-color-class';
+          break;
+
+        case 'originalRadio':
+          selectedClass = 'original-color-class';
+          break;
+
+        default:
+      }
+    }
+    return selectedClass;
+  });
+  changeDivClasses(selectedClass);
   checkLargeText();
 };
 
