@@ -7,8 +7,7 @@ import 'bootstrap';
 import '../styles/main.scss';
 
 const init = () => {
-  themesModal.initializeThemesModal();
-  // themesModal.testClassList();
+  themesModal.modalControlsListeners();
   addCommentEvents.addCommentEvents();
 };
 
