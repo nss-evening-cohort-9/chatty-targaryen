@@ -3,12 +3,12 @@ import util from '../../helpers/util';
 const radioButtons = Array.from(document.getElementsByClassName('themes-modal-radio'));
 let checkedRadioButton;
 
-const checkLargeText = () => {
+const toggleLargeText = () => {
   const appClassList = document.getElementById('app').classList;
   const lgTextCheckbox = document.getElementById('largeText');
   if (lgTextCheckbox.checked) {
     appClassList.remove('regular-text');
-    appClassList.add('large.text');
+    appClassList.add('large-text');
   } else {
     appClassList.remove('large-text');
     appClassList.add('regular-text');
@@ -18,7 +18,6 @@ const checkLargeText = () => {
 const cancelButtonClick = () => {
   radioButtons.forEach((radioButton) => {
     if (radioButton.checked) {
-      console.error(radioButton.id);
       checkedRadioButton = radioButton;
     }
   });
@@ -32,7 +31,6 @@ const changeDivClasses = (classToSub) => {
     if (className.includes('color-class')) {
       designatedClassList.remove(className);
       designatedClassList.add(classToSub);
-      util.printToDom('testModalDiv', classToSub);
     }
   });
 };
@@ -65,7 +63,7 @@ const saveButtonClick = () => {
     return selectedClass;
   });
   changeDivClasses(selectedClass);
-  checkLargeText();
+  toggleLargeText();
 };
 
 const modalControlsListeners = () => {
