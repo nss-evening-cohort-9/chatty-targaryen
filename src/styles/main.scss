@@ -44,3 +44,17 @@ body {
   display: flex;
   flex-direction: row;
 }
+
+.profilePhoto {
+  height: 10em;
+  width: 10em;
+  padding: 0em;
+  margin: -.4em;
+  border: .2em outset gray;
+}
+
+.comment {
+  margin: 2em;
+  border: .2em solid black;
+  padding: .4em;
+}

@@ -12,7 +12,7 @@ const messageBuilder = (commentArray) => {
   let domString = '';
   commentArray.forEach((comment) => {
     domString += '<div class="media comment">';
-    domString += `<img class="mr-3 align-self-center" src="${comment.imageURL}" alt="Generic placeholder image">`;
+    domString += `<img class="mr-3 align-self-center profilePhoto" src="${comment.imageURL}" alt="profile photo of the user ${comment.username}">`;
     domString += '<div class="media-body">';
     domString += `<h5 class="mt-0">${comment.username}</h5>`;
     domString += `<p class="commentText">${comment.comment}</p>`;
@@ -63,12 +63,11 @@ const getData = () => {
   seedData.getSeedData()
     .then((response) => {
       const seedArray = response.data;
-      console.error(commentCollection);
       commentCollection = seedArray.messages;
       messageBuilder(commentCollection);
     })
     .catch(() => {
-      console.error('fuck');
+      console.error('ERROR seedData.json not loaded');
     });
 };
 
