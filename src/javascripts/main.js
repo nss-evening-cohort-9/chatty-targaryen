@@ -6,8 +6,8 @@ import 'bootstrap';
 import '../styles/main.scss';
 
 const init = () => {
+  themesModal.modalControlsListeners();
   addCommentEvents.getData();
-  themesModal.initializeThemesModal();
   addCommentEvents.addCommentEvents();
 };
 
