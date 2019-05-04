@@ -1,17 +1,21 @@
-import util from '../../helpers/util';
-
 const radioButtons = Array.from(document.getElementsByClassName('themes-modal-radio'));
 let checkedRadioButton;
 
 const toggleLargeText = () => {
+  const lgTextElements = Array.from(document.getElementsByClassName('large-text'));
+  const rgTextElements = Array.from(document.getElementsByClassName('regular-text'));
   const appClassList = document.getElementById('app').classList;
   const lgTextCheckbox = document.getElementById('largeText');
   if (lgTextCheckbox.checked) {
-    appClassList.remove('regular-text');
+    lgTextElements.forEach((element) => {
+      element.classList.remove('large-text');
+    });
     appClassList.add('large-text');
   } else {
+    rgTextElements.forEach((element) => {
+      element.classList.add('large-text');
+    });
     appClassList.remove('large-text');
-    appClassList.add('regular-text');
   }
 };
 
