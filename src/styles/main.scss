@@ -46,15 +46,19 @@ body {
 }
 
 .profilePhoto {
-  height: 10em;
-  width: 10em;
+  height: auto;
+  width: auto;
+  max-width: 6em;
   padding: 0em;
-  margin: -.4em;
-  border: .2em outset gray;
+  // margin: -.4em;
+  border: .2em outset rgba(39, 39, 39, 0.527);
 }
 
 .comment {
   margin: 2em;
-  border: .2em solid black;
+  border: .2em outset rgba(119, 119, 119, 0.568);
   padding: .4em;
+}
+.media-body {
+  border: 1px dashed red;
 }

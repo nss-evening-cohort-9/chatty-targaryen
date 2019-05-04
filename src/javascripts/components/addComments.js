@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 import util from '../helpers/util';
 
 import seedData from './seedData';
@@ -11,14 +13,15 @@ let commentCollection = [];
 const messageBuilder = (commentArray) => {
   let domString = '';
   commentArray.forEach((comment) => {
-    domString += '<div class="media comment">';
+    domString += '<li class="media comment">';
     domString += `<img class="mr-3 align-self-center profilePhoto" src="${comment.imageURL}" alt="profile photo of the user ${comment.username}">`;
-    domString += '<div class="media-body">';
-    domString += `<h5 class="mt-0">${comment.username}</h5>`;
+    domString += '<div class="media-body container">';
+    domString += `<h2 class="mt-1">${comment.username}</h2>`;
     domString += `<p class="commentText">${comment.comment}</p>`;
-    domString += '</div>';
+    domString += `<p>${comment.timestamp}</p>`;
     domString += `<button id="${comment.id}" class="btn btn-danger deleteButton">Delete</button>`;
     domString += '</div>';
+    domString += '</li>';
   });
   util.printToDom('container', domString);
 };
@@ -26,6 +29,7 @@ const messageBuilder = (commentArray) => {
 const addComment = () => {
   const inputName = document.getElementById('userName');
   const inputComment = document.getElementById('userComment');
+  const inputDate = moment().calendar();
   const commentName = inputName.value;
   const commentContent = inputComment.value;
   const newComment = {
@@ -33,6 +37,7 @@ const addComment = () => {
     username: commentName,
     comment: commentContent,
     imageURL: `${commentAvatar}`,
+    timestamp: inputDate,
   };
   commentCollection.push(newComment);
   commentNum += 1;
