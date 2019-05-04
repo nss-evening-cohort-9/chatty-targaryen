@@ -6,9 +6,8 @@
     <title>DragonChat</title>
   </head>
   <body>
-    <div id="modalDiv" class="test-class test2-class color-class"></div>
-    <div id="testModalDiv"></div>
-    
+    <div class="regular-text" id="app">
+        
     <nav id="chatNav" class="navbar navbar-light bg-light justify-content-between">
       <a class="navbar-brand">Navbar</a>
       <div class="form-inline">
@@ -17,12 +16,125 @@
         <button id="addCommentBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
       </div>
       <button id="clearBtn" class="btn btn-danger">Clear Comments</button>
-      <button type="button" class="btn btn-primary modal-button" id="changeThemesButton" data-toggle="modal" data-target="#changeThemesModal">Change Themes</button>
+      <button type="button" class="regular-text large-text btn btn-primary modal-button" id="changeThemesButton" data-toggle="modal" data-target="#changeThemesModal">Change Themes</button>
     </nav>
 
 
+    <div class="original-color-class" id="container"></div>
 
-    <div id="container"></div>
+    <!-- Start of modal div -->
+    <div id="modalDiv">
 
+        <div class="modal fade change-themes-modal" id="changeThemesModal" tabindex="-1" role="dialog" aria-labelledby="changeThemesLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title w-100 text-center" id="changeThemesLabel">Change Your Theme</h5>
+            <button type="button" class="regular-text large-text close modal-control-button" id="closeButton" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+          
+            <div class="modal-body">
+            <div class="container-fluid">
+            <div class="row">
+            <div class="col-12">
+            <p class="regular-text large-text">Customize your dragon\'s chat experience with fantabulous colors or large text!</p>
+            </div>
+            <form class="col-12">
+            <div class="form-row">
+          
+            <div class="form-group col-sm-12 col-md-8 col-lg-6">
+            <div class="form-check">
+            <input class="form-check-input themes-modal-radio" type="radio" name="themesRadios" id="fireRadio" value="fire">
+            <label class="form-check-label themes-radio-label" for="fireRadio">
+            Fire Theme
+            </label>
+            </div>
+            </div>
+          
+            <div class="col-sm-12 col-md-8 col-lg-6">
+            <p class="fire-color-class text-left">Description of fire theme</p>
+            </div>
+          
+            <div class="form-group col-sm-12 col-md-8 col-lg-6">
+            <div class="form-check">
+            <input class="form-check-input themes-modal-radio" type="radio" name="themesRadios" id="iceRadio" value="ice">
+            <label class="form-check-label themes-radio-label" for="iceRadio">
+            Ice Theme
+            </label>
+            </div>
+            </div>
+          
+            <div class="col-sm-12 col-md-8 col-lg-6">
+            <p class="ice-color-class text-left">Description of ice  theme</p>
+            </div>
+          
+            <div class="form-group col-sm-12 col-md-8 col-lg-6">
+            <div class="form-check">
+            <input class="form-check-input themes-modal-radio" type="radio" name="themesRadios" id="stoneRadio" value="stone">
+            <label class="form-check-label themes-radio-label" for="stoneRadio">
+            Stone Theme
+            </label>
+            </div>
+            </div>
+          
+            <div class="col-sm-12 col-md-8 col-lg-6">
+            <p class="stone-color-class text-left">Description of stone theme</p>
+            </div>
+          
+            <div class="form-group col-sm-12 col-md-8 col-lg-6">
+            <div class="form-check">
+            <input class="form-check-input themes-modal-radio" type="radio" name="themesRadios" id="originalRadio" value="original">
+            <label class="form-check-label themes-radio-label" for="originalRadio">
+            Reset to Original
+            </label>
+            </div>
+            </div>
+          
+            <div class="col-sm-12 col-md-8 col-lg-6">
+            <p class="original-color-class    text-left">Description of original theme</p>
+            </div>
+          
+            </div>
+          
+            <div class="form-row">
+          
+            <div class="col-12">
+            <h6 class="regular-text large-text w-100 text-center">Toggle Large Text</h6>
+            </div>
+          
+            <div class="form-group col-sm-12 col-md-8 col-lg-6">
+            <div class="form-check">
+            <input class="regular-text large-text form-check-input themes-modal-checkbox" type="checkbox" value="largeText" id="largeText">
+            <label class="regular-text large-text form-check-label" for="largeText">
+            Toggle Large Text
+            </label>
+            </div>
+            </div>
+          
+            <div class="col-sm-12 col-md-8 col-lg-6">
+            <p class="regular-text large-text text-left">Toggle checkbox to enable large text</p>
+            </div>
+          
+            </div>
+            </form>
+          
+            </div>
+            </div>
+            </div>
+          
+            <div class="modal-footer">
+            <button type="button" class="regular-text large-text btn btn-secondary modal-control-button" id="cancelButton" data-dismiss="modal">Cancel</button>
+            <button type="button" class="regular-text large-text btn btn-primary modal-control-button" id="saveButton">Save changes</button>
+            </div>
+            </div>
+            </div>
+            </div>
+    </div>
+    <!-- End of modal div -->
+
+</div>  
+<!-- End of app div which contains all contents of page -->
   </body>
 </html>
