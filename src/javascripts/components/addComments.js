@@ -1,7 +1,6 @@
 import util from '../helpers/util';
 
 import seedData from './seedData';
-import editButtonListeners from './editComment/editButtonListeners';
 
 const commentAvatar = 'https://via.placeholder.com/150';
 let commentNum = 1;
@@ -15,15 +14,16 @@ const messageBuilder = (commentArray) => {
     domString += `<img class="mr-3 align-self-center profilePhoto" src="${comment.imageURL}" alt="profile photo of the user ${comment.username}">`;
     domString += '<div class="media-body">';
     domString += `<h5 class="mt-0">${comment.username}</h5>`;
-    domString += `<p class="commentText">${comment.comment}</p>`;
+    domString += `<p id="${comment.id}" class="commentText">${comment.comment}</p>`;
     domString += '</div>';
     domString += `<button id="${comment.id}" class="btn btn-danger deleteButton">Delete</button>`;
     domString += `<button id="${comment.id}" class="btn btn-primary editBtn">Edit</button>`;
     domString += '</div>';
   });
   util.printToDom('container', domString);
-  editButtonListeners.addEditBtnListeners();
 };
+
+const returnCommentCollection = () => commentCollection;
 
 const addComment = () => {
   const inputName = document.getElementById('userName');
@@ -73,4 +73,4 @@ const getData = () => {
     });
 };
 
-export default { addCommentEvents, getData };
+export default { addCommentEvents, getData, returnCommentCollection };

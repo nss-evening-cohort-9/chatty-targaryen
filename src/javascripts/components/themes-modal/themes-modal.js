@@ -19,7 +19,7 @@ const modalDomStringBuilder = () => {
   domString += '<div class="container-fluid">';
   domString += '<div class="row">';
   domString += '<div class="col-12">';
-  domString += '<p>Customize your dragon\'s chat experience with one of our gorgeous color schemes!</p>';
+  domString += "<p>Customize your dragon's chat experience with one of our gorgeous color schemes!</p>";
   domString += '</div>';
   domString += '<form class="col-12">';
   domString += '<div class="form-row">';
