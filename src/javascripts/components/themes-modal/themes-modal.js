@@ -33,8 +33,8 @@ const changeDivClasses = (classToSub) => {
   const ClassListArray = Array.from(designatedClassList);
   ClassListArray.forEach((className) => {
     if (className.includes('color-class')) {
-      designatedClassList.remove(className);
       designatedClassList.add(classToSub);
+      designatedClassList.remove(className);
     }
   });
 };
@@ -66,8 +66,10 @@ const saveButtonClick = () => {
     }
     return selectedClass;
   });
-  changeDivClasses(selectedClass);
   toggleLargeText();
+  if (selectedClass !== '') {
+    changeDivClasses(selectedClass);
+  }
 };
 
 const modalControlsListeners = () => {
