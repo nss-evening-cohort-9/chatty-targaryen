@@ -5,12 +5,12 @@
 body {
   background-color: teal;
 
-  .large-text {
-    font-size: $large-text;
-  }
-
   .regular-text {
     font-size: $regular-text;
+  }
+
+  .large-text {
+    font-size: $large-text;
   }
 
   .fire-color-class {
