@@ -95,11 +95,12 @@ body {
   flex-direction: row;
 }
 
-#newCommentEntry {
+.newCommentEntry {
   display: none;
+  width: 60%;
 }
 
-#updateCommentBtn {
+.updateCommentBtn {
   display: none;
 }
 

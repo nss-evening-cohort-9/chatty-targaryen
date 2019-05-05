@@ -2,6 +2,7 @@ import util from '../helpers/util';
 
 import seedData from './seedData';
 
+
 const commentAvatar = 'https://via.placeholder.com/150';
 let commentNum = 1;
 let commentCollection = [];
@@ -14,7 +15,9 @@ const messageBuilder = (commentArray) => {
     domString += `<img class="mr-3 align-self-center profilePhoto" src="${comment.imageURL}" alt="profile photo of the user ${comment.username}">`;
     domString += '<div class="media-body">';
     domString += `<h5 class="mt-0">${comment.username}</h5>`;
-    domString += `<p id="${comment.id}" class="commentText">${comment.comment}</p>`;
+    domString += `<p class="commentText">${comment.comment}</p>`;
+    domString += `<input id="${comment.id}" class="newCommentEntry" placeholder="${comment.comment}">`;
+    domString += `<button id="${comment.id}" class="btn btn-primary updateCommentBtn">Update</button>`;
     domString += '</div>';
     domString += `<button id="${comment.id}" class="btn btn-danger deleteButton">Delete</button>`;
     domString += `<button id="${comment.id}" class="btn btn-primary editBtn">Edit</button>`;
@@ -22,8 +25,6 @@ const messageBuilder = (commentArray) => {
   });
   util.printToDom('container', domString);
 };
-
-const returnCommentCollection = () => commentCollection;
 
 const addComment = () => {
   const inputName = document.getElementById('userName');
@@ -73,4 +74,4 @@ const getData = () => {
     });
 };
 
-export default { addCommentEvents, getData, returnCommentCollection };
+export default { addCommentEvents, getData };
