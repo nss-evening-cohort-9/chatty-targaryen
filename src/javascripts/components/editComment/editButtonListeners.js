@@ -1,26 +1,8 @@
 import addComments from '../addComments';
-import util from '../../helpers/util';
-
-// This is the same function that is used to load seed data in init function
-const messageBuilder = (commentArray) => {
-  let domString = '';
-  commentArray.forEach((comment) => {
-    domString += '<div class="media comment">';
-    domString += `<img class="mr-3 align-self-center profilePhoto" src="${comment.imageURL}" alt="profile photo of the user ${comment.username}">`;
-    domString += '<div class="media-body">';
-    domString += `<h5 class="mt-0">${comment.username}</h5>`;
-    domString += `<p class="commentText">${comment.comment}</p>`;
-    domString += `<input id="${comment.id}" class="newCommentEntry" placeholder="${comment.comment}">`;
-    domString += `<button id="${comment.id}" class="btn btn-primary updateCommentBtn">Update</button>`;
-    domString += '</div>';
-    domString += `<button id="${comment.id}" class="btn btn-danger deleteButton">Delete</button>`;
-    domString += `<button id="${comment.id}" class="btn btn-primary editBtn">Edit</button>`;
-    domString += '</div>';
-  });
-  util.printToDom('container', domString);
-};
+import messageBuilder from '../messageBuilder';
 
 // This takes the updated comment text and plugs it into the innerHTML of the comment to edit
+// It then hides the input and update button fields
 const updateCommentText = (targetId) => {
   const allUpdateButtons = Array.from(document.getElementsByClassName('updateCommentBtn'));
   const allInputs = Array.from(document.getElementsByClassName('newCommentEntry'));
@@ -50,8 +32,7 @@ const updateCommentText = (targetId) => {
       button.style.display = 'none';
     }
   });
-  // NEED TO RE-ATTACH EVENT LISTENERS HERE
-  messageBuilder(commentArray);
+  messageBuilder.messageBuilder(commentArray);
 };
 
 // This adds a listener to the update button on the comment card that will run updateCommentText
