@@ -23,12 +23,6 @@ const messageBuilder = (commentArray) => {
   util.printToDom('container', domString);
 };
 
-const limitMessages = () => {
-  if (commentCollection.length > 20) {
-    commentCollection.shift();
-  }
-};
-
 const addComment = () => {
   const inputName = document.getElementById('userName');
   const inputComment = document.getElementById('userComment');
@@ -42,7 +36,6 @@ const addComment = () => {
   };
   commentCollection.push(newComment);
   commentNum += 1;
-  limitMessages();
   messageBuilder(commentCollection);
   inputName.value = '';
   inputComment.value = '';
@@ -78,7 +71,4 @@ const getData = () => {
     });
 };
 
-export default {
-  addCommentEvents,
-  getData,
-};
+export default { addCommentEvents, getData };
