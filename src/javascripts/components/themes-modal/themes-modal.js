@@ -33,8 +33,8 @@ const changeDivClasses = (classToSub) => {
   const ClassListArray = Array.from(designatedClassList);
   ClassListArray.forEach((className) => {
     if (className.includes('color-class')) {
-      designatedClassList.add(classToSub);
       designatedClassList.remove(className);
+      designatedClassList.add(classToSub);
     }
   });
 };
