@@ -15,8 +15,8 @@ const messageBuilder = (commentArray) => {
     domString += `<img class="mr-3 align-self-center profilePhoto" src="${comment.imageURL}" alt="profile photo of the user ${comment.username}">`;
     domString += '<div class="media-body">';
     domString += `<h5 class="mt-0">${comment.username}</h5>`;
-    domString += `<p class="commentText">${comment.comment}</p>`;
-    domString += `<input id="${comment.id}" class="newCommentEntry" placeholder="${comment.comment}">`;
+    domString += `<p id="${comment.id}" class="commentText">${comment.comment}</p>`;
+    domString += `<input id="${comment.id}" class="newCommentEntry" value="${comment.comment}">`;
     domString += `<button id="${comment.id}" class="btn btn-primary updateCommentBtn">Update</button>`;
     domString += '</div>';
     domString += `<button id="${comment.id}" class="btn btn-danger deleteButton">Delete</button>`;
@@ -81,4 +81,6 @@ const getData = () => {
     });
 };
 
-export default { addCommentEvents, getData };
+const returnCommentCollection = () => commentCollection;
+
+export default { addCommentEvents, getData, returnCommentCollection };
