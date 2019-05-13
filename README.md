@@ -14,7 +14,8 @@ Noteable features and functionality include--in no particular order:
 
 ## Screenshots  
 ![Screenshot of page on page load--displays nav bar with comment creation form and page controls and display  of sample messages](https://raw.githubusercontent.com/nss-evening-cohort-9/chatty-targaryen/master/images/page-screenshot.png "Screenshot of page on page load--displays nav bar with comment creation form and page controls and display  of sample messages")  
-![]()  
+![Screenshot of modal with options for customizing page with sample color theme selected](https://raw.githubusercontent.com/nss-evening-cohort-9/chatty-targaryen/master/images/modal-screenshot.png "Screenshot of modal with options for customizing page with sample color theme selected")  
+![Screenshot of edit option on screen with comment ready to be edited](https://raw.githubusercontent.com/nss-evening-cohort-9/chatty-targaryen/master/images/edit-screenshot.png "Screenshot of edit option on screen with comment ready to be edited")  
 ## Installation Instructions  
 * Clone down this repo  
 * At the root of the project, run `npm install`  
