@@ -5,6 +5,7 @@
 body {
   background-color: teal;
 
+  // text sizing styling by class
   .regular-text {
     font-size: $regular-text;
   }
@@ -13,26 +14,31 @@ body {
     font-size: $large-text;
   }
 
+  // End of text sizing styling
+
+  // Message container color theme styling by class
   .fire-color-class {
     background-color: $fire-background;
     color: $fire-font;
   }
-  
+
   .ice-color-class {
     background-color: $ice-background;
     color: $ice-font;
   }
-  
+
   .stone-color-class {
     background-color: $stone-background;
     color: $stone-font;
   }
-  
+
   .original-color-class {
     background-color: $original-background;
     color: $original-font;
   }
-  
+
+  // End of message container color theme styling
+
 }
 
 #chatNav {
@@ -46,17 +52,21 @@ body {
   position: static;
   top: 0;
   width: 100%;
+
   #commentForm {
     display: flex;
     margin: 15px;
     color: white;
+
     .form-group {
       margin: 20px;
     }
+
     #userComment {
       width: 350px;
     }
   }
+
   .navbar-brand {
     color: white;
   }
@@ -103,4 +113,3 @@ body {
 .updateCommentBtn {
   display: none;
 }
-
