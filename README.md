@@ -3,7 +3,7 @@ chatty-targaryen created by GitHub Classroom
 
 ## Description  
 Chatty Targaryen, AKA Dragon Chat, is a chat service for dragons created as a group project by the listed authors.  
-The project demonstrates the student authors' fluency in the use of Webpack, modules, SASS, Bootstrap, vanilla JavaScript, and HTML.  
+The project demonstrates the authors' fluency in the use of Webpack, modules, SASS, Bootstrap, vanilla JavaScript, and HTML.  
 Noteable features and functionality include--in no particular order:  
 * The use of JSON data as seed data for the project  
 * The use of MomentJS for the creation of time stamps on messages  
@@ -23,20 +23,14 @@ Noteable features and functionality include--in no particular order:
 ## Authors  
 
 #### Emily DeWitt  
-###### Student Author  
 To see more of Emily's work on Github, click [HERE!](https://github.com/emilykdewitt "Emily DeWitt's Github")  
 
 #### Woody Maddox  
-###### Student Author  
 To see more of Woody's work on Github, click [HERE!](https://github.com/woodymaddox "Woody Maddox's Github")  
 
 #### Sarah Thorne  
-###### Student Author  
 To see more of Sarah's work on Github, click [HERE!](https://github.com/sarahjulesthorne "Sarah Thorne's Github")  
 
 #### Keith Walker  
-###### Student Author  
 To see more of Keith's work on Github, click [HERE!](https://github.com/KeithRWalker "Keith Walker's Github")  
 
-#### Zoe Ames  
-###### Lead Instructor  
