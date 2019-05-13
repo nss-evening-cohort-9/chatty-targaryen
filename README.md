@@ -13,7 +13,8 @@ Noteable features and functionality include--in no particular order:
 * the use of a modal to give users options for customizing colors and text sizing on their page  
 
 ## Screenshots  
-
+![Screenshot of page on page load--displays nav bar with comment creation form and page controls and display  of sample messages](https://raw.githubusercontent.com/nss-evening-cohort-9/chatty-targaryen/master/images/page-screenshot.png "Screenshot of page on page load--displays nav bar with comment creation form and page controls and display  of sample messages")  
+![]()  
 ## Installation Instructions  
 * Clone down this repo  
 * At the root of the project, run `npm install`  
