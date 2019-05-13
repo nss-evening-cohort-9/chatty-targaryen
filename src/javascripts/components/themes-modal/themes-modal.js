@@ -1,6 +1,11 @@
+// initialized vars to use throughout module
 const radioButtons = Array.from(document.getElementsByClassName('themes-modal-radio'));
 let checkedRadioButton;
 
+/* used arrays and forEach to create dynamically changeable lists of elements by className
+set lists up to auto-change text-sizing based on state of largeText checkbox
+used these methods to allow app to change text-sizing for entire page on Save click
+without warping size of pre-enlarged text elements to unmanageable sizes */
 const toggleLargeText = () => {
   const lgTextElements = Array.from(document.getElementsByClassName('large-text'));
   const rgTextElements = Array.from(document.getElementsByClassName('regular-text'));
@@ -19,6 +24,7 @@ const toggleLargeText = () => {
   }
 };
 
+//on Cancel click, loops over radio buttons and unchecks checked one
 const cancelButtonClick = () => {
   radioButtons.forEach((radioButton) => {
     if (radioButton.checked) {
@@ -27,6 +33,7 @@ const cancelButtonClick = () => {
   });
   checkedRadioButton.checked = false;
 };
+
 
 const changeDivClasses = (classToSub) => {
   const designatedClassList = document.getElementById('container').classList;
@@ -62,6 +69,7 @@ const saveButtonClick = () => {
           break;
 
         default:
+          console.error('Broken application of color classes on modal');
       }
     }
     return selectedClass;
@@ -77,4 +85,6 @@ const modalControlsListeners = () => {
   document.getElementById('cancelButton').addEventListener('click', cancelButtonClick);
 };
 
-export default { modalControlsListeners };
+export default {
+  modalControlsListeners,
+};
