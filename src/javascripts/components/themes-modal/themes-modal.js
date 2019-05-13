@@ -77,6 +77,4 @@ const modalControlsListeners = () => {
   document.getElementById('cancelButton').addEventListener('click', cancelButtonClick);
 };
 
-export default {
-  modalControlsListeners,
-};
+export default { modalControlsListeners };
