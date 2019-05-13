@@ -1,8 +1,10 @@
+import moment from 'moment';
+
 import util from '../helpers/util';
 
 import seedData from './seedData';
 
-const commentAvatar = 'https://via.placeholder.com/150';
+const commentAvatar = 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png';
 let commentNum = 1;
 let commentCollection = [];
 
@@ -10,17 +12,18 @@ let commentCollection = [];
 const messageBuilder = (commentArray) => {
   let domString = '';
   commentArray.forEach((comment) => {
-    domString += '<div class="media comment">';
+    domString += '<li class="media comment">';
     domString += `<img class="mr-3 align-self-center profilePhoto" src="${comment.imageURL}" alt="profile photo of the user ${comment.username}">`;
     domString += '<div class="media-body">';
     domString += `<h5 class="mt-0">${comment.username}</h5>`;
-    domString += `<p id="${comment.id}" class="commentText">${comment.comment}</p>`;
+    domString += `<p id="${comment.id}" class="commentText">${comment.comment}<br>${comment.timestamp}</p>`;
     domString += `<input id="${comment.id}" class="newCommentEntry" value="${comment.comment}">`;
     domString += `<button id="${comment.id}" class="btn btn-primary updateCommentBtn">Update</button>`;
     domString += '</div>';
     domString += `<button id="${comment.id}" class="btn btn-danger deleteBtn">Delete</button>`;
     domString += `<button id="${comment.id}" class="btn btn-primary editBtn">Edit</button>`;
     domString += '</div>';
+    domString += '</li>';
   });
   util.printToDom('container', domString);
 };
@@ -36,6 +39,7 @@ const limitMessages = () => {
 const addComment = () => {
   const inputName = document.getElementById('userName');
   const inputComment = document.getElementById('userComment');
+  const inputDate = moment().calendar();
   const commentName = inputName.value;
   const commentContent = inputComment.value;
   const newComment = {
@@ -43,6 +47,7 @@ const addComment = () => {
     username: commentName,
     comment: commentContent,
     imageURL: `${commentAvatar}`,
+    timestamp: inputDate,
   };
   commentCollection.push(newComment);
   commentNum += 1;
@@ -71,7 +76,6 @@ const updateCommentText = (targetId) => {
   });
   allInputs.forEach((input) => {
     if (input.id === targetId) {
-      console.error(input.id, targetId);
       input.style.display = 'none';
     }
   });
@@ -102,7 +106,6 @@ const editText = (e) => {
   const buttonId = e.target.id;
   allCommentTexts.forEach((comment) => {
     if (comment.id === buttonId) {
-      console.error(comment.id);
       allInputs.forEach((input) => {
         if (input.id === buttonId) {
           input.style.display = 'inline';
