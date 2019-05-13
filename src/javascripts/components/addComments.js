@@ -76,7 +76,6 @@ const updateCommentText = (targetId) => {
   });
   allInputs.forEach((input) => {
     if (input.id === targetId) {
-      console.error(input.id, targetId);
       input.style.display = 'none';
     }
   });
@@ -107,7 +106,6 @@ const editText = (e) => {
   const buttonId = e.target.id;
   allCommentTexts.forEach((comment) => {
     if (comment.id === buttonId) {
-      console.error(comment.id);
       allInputs.forEach((input) => {
         if (input.id === buttonId) {
           input.style.display = 'inline';
