@@ -9,6 +9,7 @@ const init = () => {
   themesModal.modalControlsListeners();
   addCommentEvents.getData();
   addCommentEvents.addCommentEvents();
+  addCommentEvents.addEditBtnListeners();
 };
 
 init();

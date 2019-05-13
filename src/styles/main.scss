@@ -40,7 +40,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   height: 300px;
-  background-image: url("../../images/theWall.jpg");
+  background-image: url("../../images/default.png");
   background-position: center;
   background-size: cover;
   position: static;
@@ -90,6 +90,24 @@ body {
   border: .2em outset rgba(119, 119, 119, 0.568);
   padding: .4em;
 }
+<<<<<<< HEAD
 .media-body {
   border: 1px dashed red;
 }
+=======
+
+#commentForm {
+  display: flex;
+  flex-direction: row;
+}
+
+.newCommentEntry {
+  display: none;
+  width: 60%;
+}
+
+.updateCommentBtn {
+  display: none;
+}
+
+>>>>>>> master
