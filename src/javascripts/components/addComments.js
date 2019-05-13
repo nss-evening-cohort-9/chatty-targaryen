@@ -4,7 +4,7 @@ import util from '../helpers/util';
 
 import seedData from './seedData';
 
-const commentAvatar = 'https://via.placeholder.com/150';
+const commentAvatar = 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png';
 let commentNum = 1;
 let commentCollection = [];
 
@@ -14,22 +14,14 @@ const messageBuilder = (commentArray) => {
   commentArray.forEach((comment) => {
     domString += '<li class="media comment">';
     domString += `<img class="mr-3 align-self-center profilePhoto" src="${comment.imageURL}" alt="profile photo of the user ${comment.username}">`;
-<<<<<<< HEAD
-    domString += '<div class="media-body container">';
-    domString += `<h2 class="mt-1">${comment.username}</h2>`;
-    domString += `<p class="commentText">${comment.comment}</p>`;
-    domString += `<p>${comment.timestamp}</p>`;
-    domString += `<button id="${comment.id}" class="btn btn-danger deleteButton">Delete</button>`;
-=======
     domString += '<div class="media-body">';
     domString += `<h5 class="mt-0">${comment.username}</h5>`;
-    domString += `<p id="${comment.id}" class="commentText">${comment.comment}</p>`;
+    domString += `<p id="${comment.id}" class="commentText">${comment.comment}<br>${comment.timestamp}</p>`;
     domString += `<input id="${comment.id}" class="newCommentEntry" value="${comment.comment}">`;
     domString += `<button id="${comment.id}" class="btn btn-primary updateCommentBtn">Update</button>`;
     domString += '</div>';
     domString += `<button id="${comment.id}" class="btn btn-danger deleteBtn">Delete</button>`;
     domString += `<button id="${comment.id}" class="btn btn-primary editBtn">Edit</button>`;
->>>>>>> master
     domString += '</div>';
     domString += '</li>';
   });
