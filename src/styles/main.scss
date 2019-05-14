@@ -3,7 +3,7 @@
 @import './_variables';
 
 body {
-  background-color: teal;
+  background-color: rgb(1, 43, 43);
 
   // text sizing styling by class
   .regular-text {
@@ -52,6 +52,12 @@ body {
   position: static;
   top: 0;
   width: 100%;
+
+  .navbar-brand {
+    font-size: 4em;
+    font-family: 'Cinzel Decorative', cursive;
+    color: red;
+  };
 
   #commentForm {
     display: flex;
